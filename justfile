@@ -22,5 +22,8 @@ check-spelling:
 check-markdown:
     docker run --rm -v $(pwd):/work tmknom/markdownlint -- .
 
+check-python:
+    docker run -ti --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py
+
 # Check everything
-check: check-markdown check-spelling
+check: check-markdown check-spelling check-python

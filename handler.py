@@ -1,6 +1,9 @@
+"""This file implements the AWS Lambda entry of LingCite."""
 import json
 
+
 def do_something():
+    """Provide bogus Lambda Result JSON."""
     # TODO implement
     return {
         'statusCode': 202,
@@ -8,31 +11,21 @@ def do_something():
     }
 
 
-print('Loading function')
-
 def lambda_handler(event, context):
-    '''Provide an event that contains the following keys:
+    """Handle lambda event.
 
-      - operation: one of the operations in the operations dict below
-      - payload: a JSON object containing parameters to pass to the
-                 operation being performed
-    '''
+    This is the main Lambda entry of LingCite.
 
-    # define the functions used to perform the CRUD operations
-    def ddb_create(x):
-        do_something()
+    Under construction. Currently it doesn't do anything interesting.
+    """
 
-    def ddb_read(x):
-        do_something()
+    def do_something_with_payload(payload):
+        """Do someting with payload."""
+        return do_something()
 
-    def ddb_update(x):
-        do_something()
-
-    def ddb_delete(x):
-        do_something()
-
-    def echo(x):
-        return x
+    def echo(payload):
+        """Echo payload."""
+        return payload
 
     if 'operation' not in event:
         print('not in')
@@ -40,11 +33,12 @@ def lambda_handler(event, context):
 
     operation = event['operation']
 
+    # supported operations
     operations = {
-        'create': ddb_create,
-        'read': ddb_read,
-        'update': ddb_update,
-        'delete': ddb_delete,
+        'create': do_something_with_payload,
+        'read': do_something_with_payload,
+        'update': do_something_with_payload,
+        'delete': do_something_with_payload,
         'echo': echo,
     }
 
