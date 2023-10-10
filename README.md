@@ -10,10 +10,10 @@ in an bucket. The back-end consists of a REST API hosted as a lambda service.
 
 # Prerequisites
 
-* curl
-* docker
-* make
-* AWS command line interface
+* [curl] (https://curl.se/)
+* [docker] (https://www.docker.com/)
+* [just] (https://github.com/casey/just)
+* [AWS command line interface] (https://aws.amazon.com/cli/)
 
 # How to test
 
@@ -24,14 +24,14 @@ There are currently no automatic tests...
 Ensure that you have the AWS rights to update function code to `myGreatFunction`
 (the name of the AWS lambda function). Run
 
-    make update-function-code
+    just deploy
 
 # How to manually test
 
 Either call the API by using the AWS command line interface:
 
-    make run-lambda
+    just run-lambda
 
 or call the API from the outside:
 
-    make run-api
+    just run-api
