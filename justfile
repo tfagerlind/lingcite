@@ -12,15 +12,15 @@ run-lambda:
 run-api:
 	curl https://xnuxfk1601.execute-api.eu-north-1.amazonaws.com/test/lingcite
 
-# Check makefiles
-check-make:
-    docker run --rm -v ${PWD}:/data cytopia/checkmake Makefile
-
 # Check spelling of markdown files
-check-markdown:
+check-spelling:
     docker run --rm -v ${PWD}:/workdir -it \
         tmaier/markdown-spellcheck:latest \
             --ignore-numbers -r "**/*.md"
 
+# Lint markdown files
+check-markdown:
+    docker run --rm -v $(pwd):/work tmknom/markdownlint -- .
+
 # Check everything
-check: check-make check-markdown
+check: check-markdown check-spelling
