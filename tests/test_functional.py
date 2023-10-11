@@ -29,5 +29,12 @@ import pytest
 ])
 
 
-def test_functional(input, output):
+def test_single_items(input, output):
     assert lingcite.gramcite.bibtex(input) == output
+
+def test_multiple_items():
+    with open("tests/sample-input.txt") as input_file:
+        with open("tests/sample-output.txt") as output_file:
+            input = input_file.read()
+            expected_output = output_file.read()
+            assert lingcite.gramcite.bibtex(input) == expected_output
