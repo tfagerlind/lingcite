@@ -1,16 +1,19 @@
 # Deploy application to AWS cloud
 deploy:
-	zip handler.zip handler.py
-	aws lambda update-function-code --function-name myGreatFunction --zip-file fileb://handler.zip
+    zip handler.zip handler.py
+    aws lambda update-function-code --function-name myGreatFunction \
+        --zip-file fileb://handler.zip
 
 # Manually test API from the inside
 run-lambda:
-	aws lambda invoke --function-name myGreatFunction --payload file://myinput.txt outputfile.txt --cli-binary-format raw-in-base64-out
-	cat outputfile.txt
+    aws lambda invoke --function-name myGreatFunction \
+        --payload file://myinput.txt outputfile.txt \
+        --cli-binary-format raw-in-base64-out
+    cat outputfile.txt
 
 # Manually test API from the outside
 run-api:
-	curl https://xnuxfk1601.execute-api.eu-north-1.amazonaws.com/test/lingcite
+    curl https://xnuxfk1601.execute-api.eu-north-1.amazonaws.com/test/lingcite
 
 # Check spelling of markdown files
 check-spelling:
