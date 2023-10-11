@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lingcite"
+version = "0.0.1"
+authors = [
+  { name="Tomas Fägerlind", email="tomas.fagerlind@sofengi.com" },
+]
+description = """LingCite is a program that converts human readable citations to BibTeX
+              citations."""
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/tfagerlind/lingcite"
+"Bug Tracker" = "https://github.com/tfagerlind/lingcite/issues"

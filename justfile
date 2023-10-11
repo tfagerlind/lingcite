@@ -25,5 +25,12 @@ check-markdown:
 check-python:
     docker run -ti --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py
 
-# Check everything
-check: check-markdown check-spelling check-python
+check-dockerfile:
+    docker run --rm -i hadolint/hadolint < Dockerfile
+
+run-functional-tests:
+    docker build . -t lingcite
+    docker run --rm lingcite pytest -vv -p no:warnings
+
+# test everything
+test: check-markdown check-spelling check-python check-dockerfile run-functional-tests
