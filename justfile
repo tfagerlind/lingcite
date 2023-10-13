@@ -27,7 +27,7 @@ check-markdown:
 
 # Check python files
 check-python:
-    docker run -ti --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py src tests
+    docker run -t --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py src tests
 
 # Check docker file
 check-dockerfile:
