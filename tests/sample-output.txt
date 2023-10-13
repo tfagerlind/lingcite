@@ -1,0 +1,193 @@
+@book{00,
+    author = {Alidou, Ousseina},
+    title = {Tasawaq d'In-gall: equisse linguistique d'une langue dite “mixte” MA thesis},
+    publisher = {University of Niamey},
+    year = {1988}
+}
+@book{01,
+    author = {Bender, M. Lionel},
+    title = {The Nilo-Saharan Languages: A Comparative Essay},
+    publisher = {Miinchen: LINCOM-Europa},
+    year = {1996}
+}
+@phdthesis{02,
+    author = {Benitez-Torres, Carlos M.},
+    title = {Some Grammatical Features of Tagdal: A Northern Songhay language},
+    school = {University of Leiden},
+    year = {Forthcoming}
+}
+@article{03,
+    author = {Benitez-Torres, Carlos and Anthony Grant},
+    title = {On the origin of some Northern Songhay mixed languages},
+    journal = {Journal of Pidgin and Creole Languages},
+    volume = {32},
+    pages = {263-303},
+    year = {2017}
+}
+@misc{04,
+    author = {Christiansen, Niels and Regula Christiansen},
+    title = {Some verb morphology features of Tadaksahak: Berber or Songhay},
+    year = {2002},
+    howpublished = {this is the question}
+}
+@phdthesis{05,
+    author = {Christiansen-Bolli, Regula},
+    title = {A Grammar of Tadaksahak: A Northern Songhay Language of Mali},
+    school = {University of Leiden},
+    year = {2010}
+}
+@incollection{06,
+    author = {Creissels, D.},
+    editor = {Thilo Schadeberg and M. Lionel Bender},
+    title = {De la possibility de rapprochements entre le songhay et les langues Niger-Congo (en particulier Mande)},
+    booktitle = {Nilo-Saharan: Proceedings of the First Nilo-Saharan Linguistics Colloquium, Leiden, September 8-10},
+    publisher = {Dordrecht: Foris Publications},
+    pages = {185-199},
+    year = {1981}
+}
+@book{07,
+    author = {Ehret, Christopher},
+    title = {A Comparative Reconstruction of Proto-Nilo-Saharan},
+    publisher = {Cologne: Rudiger Koppe Verlag},
+    year = {2001}
+}
+@book{08,
+    author = {Greenberg, Joseph},
+    title = {The Languages of Africa (International Journal of American Linguistics 29.1)},
+    publisher = {Bloomington: Indiana University Press},
+    year = {1963}
+}
+@misc{11,
+    author = {Heath, J.},
+    title = {Tadaksahak vocabulary},
+    year = {2004},
+    howpublished = {Unpublished manuscript. University of Michigan}
+}
+@book{09,
+    author = {Heath, Jeffrey},
+    title = {A Grammar ofKoyra Chiini: The Songhay of Timbuktu},
+    publisher = {Berlin: Mouton de Gruyter},
+    year = {1999}
+}
+@book{10,
+    author = {Heath, Jeffrey},
+    title = {Grammar of Koyraboro (Koroboro) Senni, the Songhay of Gao},
+    publisher = {Koln: Koppe},
+    year = {1999}
+}
+@incollection{12,
+    author = {Kossmann, Maarten},
+    editor = {Yaron Matras and Jeanette Sakel},
+    title = {Grammatical borrowing in Tasawaq},
+    booktitle = {Grammatical Borrowing in Cross-Linguistic Perspective},
+    publisher = {Berlin; New York: Mouton de Gruyter},
+    pages = {75-90},
+    year = {2007}
+}
+@article{13,
+    author = {Kossmann, Maarten},
+    title = {The borrowing of aspect as lexical tone: y-initial Tuareg verbs in Tasawaq (Nothern Songhay)},
+    journal = {Studies in African Linguistics},
+    volume = {36},
+    number = {2},
+    pages = {151-166},
+    year = {2007}
+}
+@article{14,
+    author = {Kossmann, Maarten},
+    title = {Adjectives in Northern Songhay},
+    journal = {Afrika und Ubersee},
+    volume = {90},
+    pages = {109-132},
+    year = {2011}
+}
+@phdthesis{15,
+    author = {Nicolai, Robert},
+    title = {Les dialectes du songhay (Contribution a I’etude des changements linguistiques)},
+    school = {University of Nice},
+    year = {1979}
+}
+@incollection{16,
+    author = {Nicolai, Robert},
+    editor = {Travaux du Cercle},
+    title = {Devolution problematique’ du songhay septentrional (Analyse d’une situation de contact)},
+    booktitle = {Linguistique de Nice 10-11},
+    publisher = {Presses universitaires de Nice},
+    pages = {135-148},
+    year = {1990}
+}
+@book{17,
+    author = {Nicolai, Robert},
+    title = {Parentes linguistiques (a propos du songhay). Paris},
+    publisher = {Editions du CNRS.},
+    year = {1990}
+}
+@book{18,
+    author = {Nicolai, Robert},
+    title = {La force des choses ou l’epreuve ‘nilo-saharienne: Questions sur les reconstructions archeologiques et revolution des langues},
+    publisher = {Cologne: Rudiger Kope},
+    series = {In Sprache und Geschichte in Afrika Beiheft},
+    volume = {13},
+    year = {2003}
+}
+@article{19,
+    author = {Nicolai, Robert},
+    title = {Songhay-mande convergence area: Questions and frames},
+    journal = {Annual Publication in African Linguistics},
+    volume = {4},
+    pages = {5-30},
+    year = {2006}
+}
+@incollection{20,
+    author = {Nicolai, Robert},
+    editor = {Amina Mettouchi and A. Lonnet},
+    title = {Aux marges de lespace chamito-semitique: Songhay et apparentements non-lineaires},
+    booktitle = {Faits de langues, Les langues chamito-semitiques (afro-asiatiques)},
+    publisher = {Paris},
+    pages = {245-277},
+    year = {2006}
+}
+@incollection{21,
+    author = {Nicolai, Robert},
+    editor = {Wilhelm Mohlig, Frank Seidel and Marc Seifert},
+    title = {Language contact, areality, and history: The Songhay question revisited},
+    booktitle = {Sprache und Geschichte in Afrika 19-20},
+    publisher = {Cologne: Rudiger Koppe},
+    pages = {187-207},
+    year = {2009}
+}
+@misc{22,
+    author = {Rueck, Michael and Niels Christiansen},
+    title = {Northern Songhay speech varieties in Niger},
+    year = {1999}
+}
+@article{23,
+    author = {Souag, Lameen},
+    title = {The subclassification of Songhay and its historical implications},
+    journal = {Journal of African Languages and Linguistics},
+    volume = {33},
+    number = {2},
+    pages = {181-213},
+    year = {2012}
+}
+@incollection{24,
+    author = {Souag, Lameen},
+    editor = {Harry Stroomer, Maarten Kossmann and Dymitr Ibriszimow, Rainer Vossen and Rudiger Koppe},
+    title = {The Western Berber stratum in Kwarandzyey},
+    booktitle = {Etudes berberes V, Essais sur des variations dialectales et autres articles},
+    publisher = {Cologne},
+    pages = {177-189},
+    year = {2010}
+}
+@mastersthesis{25,
+    author = {Stauffer, Daniel Ray},
+    title = {Essential Elements ofSonghai Grammar},
+    school = {University of Texas at Arlington},
+    year = {1997}
+}
+@misc{26,
+    author = {Wolff, H. Ekkehard and Manou Ousseina Alidou},
+    title = {On the non-linear ancestry of Tasawaq (Niger)},
+    year = {2001},
+    howpublished = {Or: how “mixed” can a language be? In Historical Language Contact in Africa, special volume of Sprache und Geschichte in Afrika 6/17, edited by Derek Nurse, 523-574- Koln: Rudiger Koppe}
+}
