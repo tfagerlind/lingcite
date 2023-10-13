@@ -26,7 +26,7 @@ check-markdown:
     docker run --rm -v $(pwd):/work tmknom/markdownlint -- .
 
 check-python:
-    docker run -ti --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py
+    docker run -ti --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py src tests
 
 check-dockerfile:
     docker run --rm -i hadolint/hadolint < Dockerfile

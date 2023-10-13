@@ -3,9 +3,6 @@ import pytest
 
 
 @pytest.mark.parametrize('input,output', [
-    # each element of this list will provide values for the
-    # topics "value_A" and "value_B" of the test and will
-    # generate a stand-alone test case.
     ('Hahn, Ferdinand. (1901) A Primer of the Asur Dukmā, A dialect of the Kolarian Language.  Journal of the Asiatic Society of Bengal 69(1). 149-172.',
      """@article{00,
     author = {Hahn, Ferdinand},
@@ -27,10 +24,9 @@ import pytest
 }
 """),
 ])
-
-
 def test_single_items(input, output):
     assert lingcite.gramcite.bibtex(input) == output
+
 
 def test_multiple_items():
     with open("tests/sample-input.txt") as input_file:
