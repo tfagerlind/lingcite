@@ -17,7 +17,7 @@ run-api:
 
 # Check spelling of markdown files
 check-spelling:
-    docker run --rm -v ${PWD}:/workdir -it \
+    docker run --rm -v ${PWD}:/workdir -t \
         tmaier/markdown-spellcheck:latest \
             --ignore-numbers -r "**/*.md"
 
