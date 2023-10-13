@@ -6,10 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install prerequisites
-        run: |
-          git clone https://mpr.makedeb.org/just
-          cd just
-          makedeb -si
+        run: snap install --edge --classic just
       - name: Checkout repository code
         uses: actions/checkout@v2
       - name: Run all checks and tests
