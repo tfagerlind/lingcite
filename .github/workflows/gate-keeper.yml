@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install prerequisites
-        run: snap install --edge --classic just
+        run: sudo snap install --edge --classic just
       - name: Checkout repository code
         uses: actions/checkout@v2
       - name: Run all checks and tests
