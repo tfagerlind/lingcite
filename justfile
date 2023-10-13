@@ -33,10 +33,14 @@ check-python:
 check-dockerfile:
     docker run --rm -i hadolint/hadolint < Dockerfile
 
+# Check yaml files
+check-yaml:
+    docker run --rm -v ${PWD}:/data cytopia/yamllint .
+
 # Run functional tests
 run-functional-tests:
     docker build . -t lingcite
     docker run --rm lingcite pytest -vv -p no:warnings
 
 # Test and check everything
-test: check-markdown check-spelling check-python check-dockerfile run-functional-tests
+test: check-markdown check-spelling check-python check-yaml check-dockerfile run-functional-tests

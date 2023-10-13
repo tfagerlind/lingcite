@@ -1,0 +1,16 @@
+---
+name: Verso gate keeper pipeline
+on: [push]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install prerequisites
+        run: |
+          git clone https://mpr.makedeb.org/just
+          cd just
+          makedeb -si
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - name: Run all checks and tests
+        run: just test
