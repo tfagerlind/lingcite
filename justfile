@@ -21,19 +21,22 @@ check-spelling:
         tmaier/markdown-spellcheck:latest \
             --ignore-numbers -r "**/*.md"
 
-# Lint markdown files
+# Check markdown files
 check-markdown:
     docker run --rm -v $(pwd):/work tmknom/markdownlint -- .
 
+# Check python files
 check-python:
     docker run -ti --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py src tests
 
+# Check docker file
 check-dockerfile:
     docker run --rm -i hadolint/hadolint < Dockerfile
 
+# Run functional tests
 run-functional-tests:
     docker build . -t lingcite
     docker run --rm lingcite pytest -vv -p no:warnings
 
-# test everything
+# Test and check everything
 test: check-markdown check-spelling check-python check-dockerfile run-functional-tests
