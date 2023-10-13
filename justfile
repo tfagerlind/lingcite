@@ -17,7 +17,7 @@ run-api:
 
 # Check spelling of markdown files
 check-spelling:
-    docker run --rm -v ${PWD}:/workdir -it \
+    docker run --rm -v ${PWD}:/workdir -t \
         tmaier/markdown-spellcheck:latest \
             --ignore-numbers -r "**/*.md"
 
@@ -27,11 +27,15 @@ check-markdown:
 
 # Check python files
 check-python:
-    docker run -ti --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py src tests
+    docker run -t --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py src tests
 
 # Check docker file
 check-dockerfile:
     docker run --rm -i hadolint/hadolint < Dockerfile
+
+# Check yaml files
+check-yaml:
+    docker run --rm -v ${PWD}:/data cytopia/yamllint .
 
 # Run functional tests
 run-functional-tests:
@@ -39,4 +43,4 @@ run-functional-tests:
     docker run --rm lingcite pytest -vv -p no:warnings
 
 # Test and check everything
-test: check-markdown check-spelling check-python check-dockerfile run-functional-tests
+test: check-markdown check-spelling check-python check-yaml check-dockerfile run-functional-tests

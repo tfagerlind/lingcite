@@ -1,0 +1,8 @@
+extends: default
+
+rules:
+  # github workflows uses a key named "on" not intended as a truth value
+  truthy: disable
+
+  # documents without a start line looks more appealing
+  document-start: disable
