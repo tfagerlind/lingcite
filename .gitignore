@@ -1,3 +1,6 @@
 src/lingcite/__pycache__/
 tests/__pycache__/
 venv/
+src/deps/
+handler.zip
+outputfile.txt

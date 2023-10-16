@@ -14,6 +14,7 @@ in an bucket. The back-end consists of a REST API hosted as a lambda service.
 * [docker](docker.com)
 * [just](github.com/casey/just)
 * [AWS command line interface](aws.amazon.com/cli)
+* zip
 
 ## How to test
 
@@ -35,3 +36,8 @@ Either call the API by using the AWS command line interface:
 or call the API from the outside:
 
     just run-api
+
+## Todo
+
+we must sort out why the calls directly to lambda are different than the api (for the api
+the body contains a string with json...)

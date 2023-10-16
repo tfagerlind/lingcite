@@ -1,19 +1,27 @@
+# Build test container
+build:
+    docker build . -t lingcite
+
 # Deploy application to AWS cloud
 deploy:
-    zip handler.zip handler.py
+    rm -f handler.zip
+    cd src && pip install -t deps -r ../requirements.prod.txt --upgrade && zip -r ../handler.zip lingcite handler.py deps
     aws lambda update-function-code --function-name myGreatFunction \
         --zip-file fileb://handler.zip
 
 # Manually test API from the inside
 run-lambda:
     aws lambda invoke --function-name myGreatFunction \
-        --payload file://myinput.txt outputfile.txt \
+        --payload file://myinput-with-body.txt outputfile.txt \
         --cli-binary-format raw-in-base64-out
     cat outputfile.txt
 
 # Manually test API from the outside
 run-api:
-    curl https://xnuxfk1601.execute-api.eu-north-1.amazonaws.com/test/lingcite
+    curl -X POST  \
+        -H 'Content-Type: application/json' \
+        -d @myinput.txt \
+        https://xnuxfk1601.execute-api.eu-north-1.amazonaws.com/test/lingcite
 
 # Check spelling of markdown files
 check-spelling:
@@ -26,8 +34,9 @@ check-markdown:
     docker run --rm -v $(pwd):/work tmknom/markdownlint -- .
 
 # Check python files
-check-python:
+check-python: build
     docker run -t --rm -v ${PWD}:/apps alpine/flake8:6.0.0 handler.py src tests
+    docker run --rm lingcite python -m pylint handler.py
 
 # Check docker file
 check-dockerfile:
@@ -38,8 +47,7 @@ check-yaml:
     docker run --rm -v ${PWD}:/data cytopia/yamllint .
 
 # Run functional tests
-run-functional-tests:
-    docker build . -t lingcite
+run-functional-tests: build
     docker run --rm lingcite pytest -vv -p no:warnings
 
 # Test and check everything
