@@ -14,6 +14,7 @@ in an bucket. The back-end consists of a REST API hosted as a lambda service.
 * [docker](docker.com)
 * [just](github.com/casey/just)
 * [AWS command line interface](aws.amazon.com/cli)
+* zip
 
 ## How to test
 

@@ -1,6 +1,6 @@
 {
     "payload": {
-        "somekey1": "somevalue1",
+        "human-readable": "Hahn, Ferdinand. (1901) A Primer of the Asur Dukmā, A dialect of the Kolarian Language.  Journal of the Asiatic Society of Bengal 69(1). 149-172.",
         "somekey2": "somevalue2"
     }
 }
