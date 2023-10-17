@@ -1,13 +1,14 @@
 # Build test container
 build:
-    docker build . -t lingcite
+    docker build -f Dockerfile.dev -t lingcite.dev --progress plain .
+    docker build -f Dockerfile.prod -t lingcite.prod --progress plain .
 
 # Deploy application to AWS cloud
-deploy:
-    rm -f handler.zip
-    cd src && pip install -t deps -r ../requirements.prod.txt --upgrade && zip -r ../handler.zip lingcite handler.py deps
+tmpdir  := `mktemp -d`
+deploy: build
+    docker run --rm -v "{{tmpdir}}:/build" -e HANDLER=/build/handler.zip lingcite.prod ./create-package.sh
     aws lambda update-function-code --function-name myGreatFunction \
-        --zip-file fileb://handler.zip
+        --zip-file fileb://{{tmpdir}}/handler.zip
 
 # Manually test API from the inside
 run-lambda:
@@ -25,7 +26,7 @@ run-api:
 
 # Check spelling of markdown files
 check-spelling:
-    docker run --rm -v ${PWD}:/workdir -t \
+    docker run --rm -v "${PWD}:/workdir" -t \
         tmaier/markdown-spellcheck:latest \
             --ignore-numbers -r "**/*.md"
 
@@ -35,20 +36,28 @@ check-markdown:
 
 # Check python files
 check-python: build
-    docker run -t --rm -v ${PWD}:/apps alpine/flake8:6.0.0 src/handler.py src/lingcite tests
-    docker run --rm lingcite python -m pylint src/handler.py
+    docker run -t --rm -v "${PWD}:/apps" alpine/flake8:6.0.0 src/handler.py src/lingcite tests
+    docker run --rm lingcite.dev python -m pylint src/handler.py
 
 # Check docker file
 check-dockerfile:
-    docker run --rm -i hadolint/hadolint < Dockerfile
+    docker run --rm -i hadolint/hadolint < Dockerfile.prod
+    docker run --rm -i hadolint/hadolint < Dockerfile.dev
+
+# Check json files
+check-json:
+    docker run --rm -v "${PWD}:/data" cytopia/jsonlint -t '  ' *.json
+
+check-shell:
+    docker run --rm -v "${PWD}:/mnt" koalaman/shellcheck:stable create-package.sh
 
 # Check yaml files
 check-yaml:
-    docker run --rm -v ${PWD}:/data cytopia/yamllint .
+    docker run --rm -v "${PWD}:/data" cytopia/yamllint .
 
 # Run functional tests
 run-functional-tests: build
-    docker run --rm lingcite pytest -vv -p no:warnings
+    docker run --rm lingcite.dev pytest -vv -p no:warnings
 
 # Test and check everything
-test: check-markdown check-spelling check-python check-yaml check-dockerfile run-functional-tests
+test: check-spelling check-markdown check-python check-dockerfile check-json check-shell check-yaml run-functional-tests

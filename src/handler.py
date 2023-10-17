@@ -1,13 +1,7 @@
 """This file implements the AWS Lambda entry of LingCite."""
 import json
 import logging
-import sys
-
-sys.path.insert(0, 'deps')
-
-# we need to somehow add deps to the path
-# pylint: disable=wrong-import-position
-import lingcite.gramcite  # noqa: E402
+import lingcite.gramcite
 
 
 logging.basicConfig(level=logging.INFO)
